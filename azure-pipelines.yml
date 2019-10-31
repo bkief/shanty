@@ -11,7 +11,7 @@ jobs:
     maxParallel: 1
   pool:
     vmImage: OS_PLATFORM
-  -steps
+  steps:
     - script: go build -v shanty.go
       displayName: 'Build'
       
