@@ -9,10 +9,10 @@ jobs:
       GoUnix:
         OS_PLATFORM: 'windows-latest'
     maxParallel: 1
-    pool:
-      vmImage: OS_PLATFORM
-    -steps
-      - script: go build -v .
-        workingDirectory: '$(modulePath)'
-        displayName: 'Build'
+  pool:
+    vmImage: OS_PLATFORM
+  -steps
+    - script: go build -v .
+      workingDirectory: '$(modulePath)'
+      displayName: 'Build'
       
