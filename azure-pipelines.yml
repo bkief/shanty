@@ -12,7 +12,6 @@ jobs:
   pool:
     vmImage: OS_PLATFORM
   -steps
-    - script: go build -v .
-      workingDirectory: '$(modulePath)'
+    - script: go build -v shanty.go
       displayName: 'Build'
       
