@@ -1,0 +1,18 @@
+jobs:
+- job: Build
+  strategy:
+    matrix:
+      GoWin:
+        OS_PLATFORM: 'ubuntu-latest'
+      GoMac:
+        OS_PLATFORM: 'macOS-latest'
+      GoUnix:
+        OS_PLATFORM: 'windows-latest'
+    maxParallel: 1
+    pool:
+      vmImage: OS_PLATFORM
+    -steps
+      - script: go build -v .
+        workingDirectory: '$(modulePath)'
+        displayName: 'Build'
+      
