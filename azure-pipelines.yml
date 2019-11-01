@@ -18,3 +18,10 @@ jobs:
     - script: go build -v -o $(Build.ArtifactStagingDirectory)/$(EXECUTABLE_NAME) shanty.go
       displayName: 'Build'
       
+- task: GithubRelease@0 
+  displayName: 'Create GitHub Release'   
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/release-v')   
+  inputs:
+    gitHubConnection: bkief
+    repositoryName: bkief/shanty          
+    assets: $(Build.ArtifactStagingDirectory)/shanty*
