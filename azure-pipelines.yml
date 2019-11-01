@@ -8,7 +8,7 @@ jobs:
       GoMac:
         OS_PLATFORM: 'macOS-latest'
         EXECUTABLE_NAME: 'shanty_darwin_x64'
-      GoUnix:
+      GoLinux:
         OS_PLATFORM: 'ubuntu-latest'
         EXECUTABLE_NAME: 'shanty_linux_x64'
     maxParallel: 1
